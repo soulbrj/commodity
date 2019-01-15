@@ -4,7 +4,7 @@
       <el-header class="header">
         <img src="../assets/logo.png">
         <h2>电商后台管理系统</h2>
-        <a href="#">退出</a>
+        <a href="#" @click="getTui()">退出</a>
       </el-header>
       <el-container>
         <el-aside class="aside" unique-opened>
@@ -100,7 +100,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    getTui() {
+      
+      localStorage.clear();
+
+       this.$router.push({
+        name: "login"
+      });
+
+      this.$message.success('退出成功')
+    }
+  }
+};
 </script>
 
 <style>
